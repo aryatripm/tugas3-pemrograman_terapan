@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.arya.tugas3_praktikum.controller.BarangController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openSupplier" text="Show Supplier Management">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="F12" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem mnemonicParsing="false" text="Close">
+                           <accelerator>
+                              <KeyCodeCombination alt="DOWN" code="X" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <VBox prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <HBox prefHeight="0.0" prefWidth="0.0" spacing="100.0">
+                     <children>
+                        <Label text="ID" />
+                        <TextField fx:id="id" prefHeight="26.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="36.0" prefHeight="0.0" prefWidth="0.0" spacing="100.0">
+                     <children>
+                        <Label text="Nama" />
+                        <TextField fx:id="nama" prefHeight="26.0" prefWidth="419.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="384.0" prefHeight="0.0" prefWidth="0.0" spacing="100.0">
+                     <children>
+                        <Label text="Supplier" />
+                        <ComboBox fx:id="supplier" prefWidth="150.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="0.0" prefWidth="0.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#save" text="Save" />
+                        <Button fx:id="resetBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+                        <Button fx:id="updateBtn" layoutX="62.0" layoutY="10.0" mnemonicParsing="false" onAction="#update" text="Update" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <TableView fx:id="barangTable" onMouseClicked="#getDataTable" prefHeight="294.0" prefWidth="579.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                      <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="namaColumn" prefWidth="75.0" text="Nama" />
+                        <TableColumn fx:id="supplierColumn" prefWidth="75.0" text="Supplier" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
